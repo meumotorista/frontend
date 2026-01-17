@@ -1,16 +1,55 @@
-# React + Vite
+# Meu Motorista - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o frontend da aplicação **Meu Motorista**, desenvolvido com React e Vite. A aplicação permite a gestão de usuários (motoristas e passageiros) e veículos, integrada a uma API simulada (JSON Server).
 
-Currently, two official plugins are available:
+## Tecnologias Utlizadas
+- **React** (v19)
+- **Vite**
+- **Axios** para consumo de API
+- **React Router Dom** para navegação
+- **Lucide React** para ícones
+- **CSS Modules / Global Styles** para estilização
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
 
-## React Compiler
+### Autenticação
+- Tela de Login (Simulação).
+- Rotas Protegidas.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Gestão de Usuários (CRUD)
+- **Listagem**: Visualização de todos os usuários cadastrados com indicador de tipo (Motorista/Passageiro/Admin).
+- **Cadastro**: Adição de novos usuários via modal.
+- **Edição**: Atualização de dados cadastrais.
+- **Exclusão**: Remoção de usuários do sistema.
 
-## Expanding the ESLint configuration
+### Gestão de Veículos (CRUD)
+- **Listagem**: Visualização de veículos em cards com foto, modelo e placa.
+- **Cadastro**: Adição de novos veículos via modal.
+- **Edição**: Atualização de status e informações do veículo.
+- **Exclusão**: Remoção de veículos.
+- **Associação**: Novos veículos são associados a um motorista padrão (Demo).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Como Executar
+
+1. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+
+2. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Acesse a aplicação:**
+   Abra [http://localhost:5173](http://localhost:5173) no seu navegador.
+
+## Estrutura do Projeto
+
+- `/src/pages`: Componentes de página (Login, UsersPage, VehiclesPage).
+- `/src/components`: Componentes reutilizáveis (Modais, Sidebar).
+- `/src/services`: Configuração do Axios e chamadas à API.
+- `/src/context`: Contexto de Autenticação.
+
+## API
+O frontend espera uma API rodando. Certifique-se de que o backend (JSON Server) está ativo ou a URL da API em `src/services/api.js` está correta.
